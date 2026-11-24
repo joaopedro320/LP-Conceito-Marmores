@@ -16,7 +16,9 @@
     a.setAttribute("target", "_blank");
     a.setAttribute("rel", "noopener");
     a.addEventListener("click", function () {
-      window.qh4Track("whatsapp_click", { wa_local: a.getAttribute("data-wa") || "botao" });
+      var local = a.getAttribute("data-wa") || "botao";
+      window.qh4Track("whatsapp_click", { wa_local: local, botao_id: a.id || "" });
+      window.qh4Lead("whatsapp", { lead_local: local, botao_id: a.id || "" });
     });
   });
 
@@ -181,6 +183,7 @@
       });
 
       window.qh4Track("generate_lead", { form_id: "lead_principal", servico: d.servico });
+      window.qh4Lead("formulario", { lead_local: "formulario", botao_id: btn.id || "", servico: d.servico });
 
       if (C.webhook) {
         try { sessionStorage.setItem("qh4_lead", "1"); } catch (err) {}
@@ -203,17 +206,23 @@
       linhas.push("", "Aguardo mais informações.");
       setTimeout(function () { location.href = waLink(linhas.join("\n")); }, C.redirectDelay || 450);
     });
+
+    /* Voltou do WhatsApp pelo "voltar" do navegador: destrava o botão */
+    window.addEventListener("pageshow", function (e) {
+      if (e.persisted) { btn.firstElementChild.textContent = "Enviar e falar no WhatsApp"; check(); }
+    });
   }
 
   /* ---------- Página de obrigado ---------- */
   var thanks = $("#thanks");
   if (thanks) {
-    window.qh4Track("thank_you_view", {});
     var link = $("#thanks-wa");
     link.setAttribute("href", waLink(C.msgFormulario));
     var n = 5, out = $("#thanks-count");
     var auto = false;
     try { auto = sessionStorage.getItem("qh4_lead") === "1"; sessionStorage.removeItem("qh4_lead"); } catch (err) {}
+    /* Só registra a visualização se veio de um envio real (abrir /obrigado direto ou recarregar não conta) */
+    if (auto) window.qh4Track("thank_you_view", {});
     if (auto) {
       var t = setInterval(function () {
         n--; out.textContent = n;

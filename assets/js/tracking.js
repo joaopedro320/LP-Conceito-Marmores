@@ -22,6 +22,10 @@ window.QH4_CONFIG = {
   googleAdsLeadLabel: "",
   googleAdsWhatsappLabel: "",
 
+  /* Meta Pixel direto: dispara fbq('track','Lead') junto com o evento qh4_lead.
+     Deixe false se o Lead do Meta já for disparado por uma tag no GTM (senão conta 2x). */
+  metaPixelLead: false,
+
   /* Tempo (ms) de espera antes de redirecionar pro WhatsApp depois de disparar o evento */
   redirectDelay: 450
 };
@@ -39,4 +43,25 @@ window.qh4Track = function (evento, params) {
       if (evento === "whatsapp_click" && c.googleAdsWhatsappLabel) window.gtag("event", "conversion", { send_to: c.googleAdsWhatsappLabel });
     }
   } catch (e) { /* nunca quebrar a página por causa de rastreamento */ }
+};
+
+/* ÚNICO evento de conversão de lead: qh4_lead
+   Só é chamado em 2 situações:
+   - lead_tipo "formulario": formulário preenchido e enviado (válido)
+   - lead_tipo "whatsapp": clique num botão de WhatsApp (data-wa)
+   Conta no máximo 1 lead de cada tipo por sessão do navegador, então clicar
+   3 vezes no WhatsApp ou reenviar o formulário não gera lead duplicado. */
+window.qh4Lead = function (tipo, params) {
+  var chave = "qh4_lead_" + tipo;
+  try {
+    if (sessionStorage.getItem(chave)) return false;
+    sessionStorage.setItem(chave, "1");
+  } catch (e) { /* sem sessionStorage: segue e conta */ }
+  window.qh4Track("qh4_lead", Object.assign({ lead_tipo: tipo }, params || {}));
+  try {
+    if (window.QH4_CONFIG && window.QH4_CONFIG.metaPixelLead && typeof window.fbq === "function") {
+      window.fbq("track", "Lead", { content_name: tipo });
+    }
+  } catch (e) {}
+  return true;
 };
