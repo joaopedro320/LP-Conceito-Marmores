@@ -14,12 +14,11 @@
      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
      })(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
      ========================================================== -->
-<script async src="https://www.googletagmanager.com/gtm.js?id=GTM-W8C66KNV"></script>
-<script>
- window.dataLayer = window.dataLayer || [];
- function gtag(){dataLayer.push(arguments);}
- gtag('js', new Date());
-</script>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W8C66KNV');</script>
 
 <!-- ==========================================================
      [QH4 SLOT 2] VERIFICAÇÕES DE DOMÍNIO
@@ -154,7 +153,7 @@ src="https://www.facebook.com/tr?id=2286633802195475&ev=PageView&noscript=1"
       <a href="#projetos">Projetos</a>
       <a href="#sobre">Sobre</a>
       <a href="#duvidas">Dúvidas</a>
-      <a class="btn" href="#orcamento">Orçamento</a>
+      <a class="btn" id="btn-menu-orcamento" href="#orcamento">Orçamento</a>
     </nav>
   </div>
 </header>
@@ -175,10 +174,10 @@ src="https://www.facebook.com/tr?id=2286633802195475&ev=PageView&noscript=1"
         <span class="hero__loc rv" style="--d:.2s">serviços de excelência, da base ao acabamento</span>
         <p class="hero__sub rv" style="--d:.28s">Na Conceito Mármores, a marmoraria e o gesso têm produção própria, a instalação é feita pela nossa equipe e o acabamento é fino em cada detalhe. Cuidamos da obra completa para o seu projeto sair do jeito que você imaginou.</p>
         <div class="hero__cta rv" style="--d:.36s">
-          <a class="btn" href="#orcamento">Solicitar orçamento
+          <a class="btn" id="btn-hero-orcamento" href="#orcamento">Solicitar orçamento
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
-          <a class="btn btn--ghost" href="#" data-wa="hero">Falar no WhatsApp</a>
+          <a class="btn btn--ghost" id="btn-hero-whatsapp" href="#" data-wa="hero">Falar no WhatsApp</a>
         </div>
         <div class="hero__facts rv" style="--d:.46s">
           <div class="fact"><b>Obra completa</b><span>Da base ao acabamento</span></div>
@@ -236,7 +235,7 @@ src="https://www.facebook.com/tr?id=2286633802195475&ev=PageView&noscript=1"
         <div class="build__photo rv" style="--d:.2s">
           <img src="assets/img/parede-pedra-forro-madeira.jpg" alt="Parede de pedra com forro de madeira, acabamento da Conceito Mármores" width="1400" height="1055" loading="lazy">
         </div>
-        <a class="btn rv" href="#orcamento" style="--d:.3s">Quero meu orçamento</a>
+        <a class="btn rv" id="btn-servicos-orcamento" href="#orcamento" style="--d:.3s">Quero meu orçamento</a>
       </div>
       <div class="steps">
         <span class="steps__fill"></span>
@@ -363,7 +362,7 @@ src="https://www.facebook.com/tr?id=2286633802195475&ev=PageView&noscript=1"
         <div class="field"><label for="f-cidade">Cidade ou bairro (opcional)</label><input id="f-cidade" name="cidade" type="text" autocomplete="address-level2" placeholder="Ex.: Campo Grande"></div>
         <div class="field"><label for="f-msg">Conte sobre o seu projeto (opcional)</label><textarea id="f-msg" name="mensagem" placeholder="Ambientes, prazos, ideias..."></textarea></div>
         <div class="hp" aria-hidden="true"><label for="f-site">Não preencha</label><input id="f-site" name="site" type="text" tabindex="-1" autocomplete="off"></div>
-        <button class="btn" type="submit" disabled><span>Enviar e falar no WhatsApp</span>
+        <button class="btn" id="btn-form-enviar" type="submit" disabled><span>Enviar e falar no WhatsApp</span>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </button>
         <p class="form__note">Seus dados são usados só para retornar o seu contato.</p>
@@ -379,7 +378,7 @@ src="https://www.facebook.com/tr?id=2286633802195475&ev=PageView&noscript=1"
         <img src="assets/img/logo-conceito-marmores-claro.png" alt="Conceito Mármores, serviços de excelência" width="1000" height="153" loading="lazy">
       </div>
       <div class="footer__cols">
-        <div><h4>Contato</h4><ul><li><a href="#" data-wa="rodape">WhatsApp (67) 98111-2878</a></li><li><a href="https://www.instagram.com/conceito_marmores/" target="_blank" rel="noopener">@conceito_marmores</a></li></ul></div>
+        <div><h4>Contato</h4><ul><li><a id="btn-rodape-whatsapp" href="#" data-wa="rodape">WhatsApp (67) 98111-2878</a></li><li><a href="https://www.instagram.com/conceito_marmores/" target="_blank" rel="noopener">@conceito_marmores</a></li></ul></div>
         <div><h4>Atendimento</h4><ul><li>Segunda a sexta</li><li>8h às 17h</li><li>Campo Grande, MS</li></ul></div>
         <div><h4>Navegue</h4><ul><li><a href="#servicos">Da base ao acabamento</a></li><li><a href="#projetos">Projetos</a></li><li><a href="#duvidas">Dúvidas</a></li></ul></div>
       </div>
@@ -391,7 +390,7 @@ src="https://www.facebook.com/tr?id=2286633802195475&ev=PageView&noscript=1"
   </div>
 </footer>
 
-<a class="wa-float" href="#" data-wa="flutuante" aria-label="Chamar no WhatsApp">
+<a class="wa-float" id="btn-whatsapp-flutuante" href="#" data-wa="flutuante" aria-label="Chamar no WhatsApp">
   <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16.04 3C9.4 3 4 8.38 4 15.02c0 2.12.55 4.18 1.6 6L4 29l8.17-1.57a12.03 12.03 0 0 0 3.87.63C22.68 28.06 28 22.67 28 16.03 28 9.38 22.68 3 16.04 3zm0 22.04c-1.2 0-2.38-.2-3.5-.6l-.5-.17-4.85.93.96-4.7-.2-.5a9.97 9.97 0 0 1-1.54-5.31c0-5.5 4.5-9.97 10.03-9.97 5.53 0 10.02 4.48 10.02 9.98 0 5.5-4.5 10.34-9.92 10.34zm5.5-7.46c-.3-.15-1.78-.88-2.06-.98-.28-.1-.48-.15-.68.15-.2.3-.78.98-.95 1.18-.18.2-.35.22-.65.08-.3-.15-1.27-.47-2.42-1.5-.9-.8-1.5-1.78-1.67-2.08-.18-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.38-.02-.53-.08-.15-.68-1.65-.93-2.25-.25-.58-.5-.5-.68-.5l-.58-.01c-.2 0-.53.08-.8.38-.28.3-1.05 1.03-1.05 2.5s1.08 2.9 1.23 3.1c.15.2 2.1 3.2 5.08 4.5.7.3 1.26.48 1.7.62.72.23 1.37.2 1.88.12.58-.08 1.78-.73 2.03-1.43.25-.7.25-1.3.18-1.43-.08-.13-.28-.2-.58-.35z"/></svg>
 </a>
 

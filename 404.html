@@ -4,12 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- [QH4 SLOT 1] GOOGLE TAG MANAGER (HEAD): COLE AQUI o script do GTM, igual ao da index. -->
-<script async src="https://www.googletagmanager.com/gtm.js?id=GTM-W8C66KNV"></script>
-<script>
- window.dataLayer = window.dataLayer || [];
- function gtag(){dataLayer.push(arguments);}
- gtag('js', new Date());
-</script>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W8C66KNV');</script>
 <!-- [QH4 SLOT 2] VERIFICAÇÕES DE DOMÍNIO: COLE AQUI as metas de verificação, iguais às da index. -->
 <!-- [QH4 SLOT 3] META PIXEL (direto, só se NÃO usar GTM): COLE AQUI o código base do Pixel. -->
 <!-- Meta Pixel Code -->
@@ -51,8 +50,8 @@ src="https://www.facebook.com/tr?id=2286633802195475&ev=PageView&noscript=1"
     <h1>Essa página não está <span class="script">aqui</span></h1>
     <p>O endereço pode ter mudado ou não existe. Volte para o início ou fale direto com a nossa equipe.</p>
     <div class="row">
-      <a class="btn" href="/">Voltar ao início</a>
-      <a class="btn btn--ghost" href="#" data-wa="404">Falar no WhatsApp</a>
+      <a class="btn" id="btn-404-inicio" href="/">Voltar ao início</a>
+      <a class="btn btn--ghost" id="btn-404-whatsapp" href="#" data-wa="404">Falar no WhatsApp</a>
     </div>
   </div>
 </main>
