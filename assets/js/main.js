@@ -22,6 +22,13 @@
     });
   });
 
+  /* ---------- Links para a LP de revestimentos ---------- */
+  $$("[data-x]").forEach(function (a) {
+    a.addEventListener("click", function () {
+      window.qh4Track("click_lp_revestimentos", { local: a.getAttribute("data-x") });
+    });
+  });
+
   /* ---------- Header ---------- */
   var header = $(".header");
   function onScroll() {
