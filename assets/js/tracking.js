@@ -4,7 +4,7 @@
    ========================================================== */
 window.QH4_CONFIG = {
   /* WhatsApp do cliente (DDI + DDD + número, só dígitos) */
-  whatsapp: "5567981112878",
+  whatsapp: "5567992117332",
 
   /* Webhook do Google Apps Script (Web App publicado).
      - VAZIO: o formulário monta a mensagem completa com todos os campos e manda direto pro WhatsApp.
@@ -14,7 +14,7 @@ window.QH4_CONFIG = {
   webhook: "",
 
   /* Mensagens do WhatsApp */
-  msgBotao: "Olá, vim pelo site da Conceito Mármores e gostaria de um orçamento.",
+  msgBotao: "Olá, vim pelo site da Conceito Mármores e gostaria de um orçamento de revestimentos.",
   msgFormulario: "Olá, acabei de preencher o formulário no site. Aguardo mais informações.",
 
   /* Rótulos de conversão do Google Ads (opcional, só se usar gtag direto sem GTM).

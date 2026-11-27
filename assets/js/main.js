@@ -1,4 +1,4 @@
-/* Conceito Mármores | LP QH4 Growth */
+/* Conceito Mármores Revestimentos | LP QH4 Growth */
 (function () {
   "use strict";
   var C = window.QH4_CONFIG || {};
@@ -20,10 +20,10 @@
     });
   });
 
-  /* ---------- Links para a LP de revestimentos ---------- */
+  /* ---------- Links para a outra LP (marmoraria) ---------- */
   $$("[data-x]").forEach(function (a) {
     a.addEventListener("click", function () {
-      window.qh4Track("click_lp_revestimentos", { local: a.getAttribute("data-x") });
+      window.qh4Track("click_lp_marmoraria", { local: a.getAttribute("data-x") });
     });
   });
 
@@ -63,7 +63,7 @@
   }
 
   /* ---------- Parallax leve no hero ---------- */
-  var heroImg = $(".hero__main img");
+  var heroImg = $(".hero__main img, .rhero__bg img");
   var heroCard = $(".hero__card");
   if (heroImg && !reduce) {
     var ticking = false;
@@ -199,7 +199,7 @@
 
       /* Sem Apps Script: monta a mensagem completa e manda direto pro WhatsApp */
       var linhas = [
-        "Olá, acabei de preencher o formulário no site da Conceito Mármores.",
+        "Olá, acabei de preencher o formulário de revestimentos no site da Conceito Mármores.",
         "",
         "*Nome:* " + d.nome,
         "*WhatsApp:* " + d.whatsapp,
